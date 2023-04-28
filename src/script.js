@@ -2,7 +2,6 @@ const $$ = (el) => document.querySelector(el);
 
 let globalData = {
     inputFields: ["username", "email", "password"],
-    strengthReport: { crackTime: "", grade: "" },
     crackTime: "0 seconds",
     checkPass() {
         passPhrase = $$("#password").value;
