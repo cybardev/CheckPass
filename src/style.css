@@ -1,0 +1,11 @@
+body {
+    padding-block: 5vh;
+}
+
+h2 {
+    font-size: medium;
+}
+
+h3 > span {
+    font-weight: normal;
+}
