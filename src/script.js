@@ -1,15 +1,4 @@
-/**
- * Aliases to create DOM objects using $() like in JQuery
- *
- * @author cybardev
- * @param {String} selector selector for the element
- * @returns DOM Object for specified element
- */
-const $$ = (selector) => {
-    return selector[0] === "#"
-        ? document.querySelector(selector)
-        : document.querySelectorAll(selector);
-};
+const $$ = (el) => document.querySelector(el);
 
 let globalData = {
     inputFields: ["username", "email", "password"],
