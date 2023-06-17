@@ -1,6 +1,6 @@
 const $$ = (el) => document.querySelector(el);
 
-let globalData = {
+let componentData = {
     inputFields: ["username", "email", "password"],
     strengthReport: { crackTime: "", grade: "" },
     crackTime: "0 seconds",
@@ -9,9 +9,9 @@ let globalData = {
         this.crackTime =
             passPhrase.length != 0
                 ? zxcvbn(passPhrase, [
-                      $$("#username").value,
-                      $$("#email").value,
-                  ]).crack_times_display.offline_fast_hashing_1e10_per_second
+                    $$("#username").value,
+                    $$("#email").value,
+                ]).crack_times_display.offline_fast_hashing_1e10_per_second
                 : (this.crackTime = "0 seconds");
     },
 };
