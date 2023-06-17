@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CheckPass</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
-    <link rel="stylesheet" href="./src/style.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script async defer type="text/javascript" src="./src/zxcvbn.js"></script>
-    <script src="./src/script.js"></script>
-</head>
-
-<body x-data="globalData">
-    <section>
-        <form @submit.prevent="checkPass()">
-            <header>
-                <h1>Password Strength Checker</h1>
-                <h2>
-                    Type in any login information below to see how strong
-                    the password is against bruteforce attacks
-                </h2>
-            </header>
-            <template x-for="field in inputFields">
-                <article>
-                    <label :for="field" x-text="field"></label>
-                    <input type="text" :id="field" :name="field" :placeholder="field" :aria-placeholder="field" />
-                </article>
-            </template>
-            <button type="submit">Check</button>
-            <h3>Time to crack: <span x-text="crackTime"></span></h3>
-        </form>
-    </section>
-</body>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CheckPass</title>
+        <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
+        <link rel="stylesheet" href="./src/style.css" />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+        <script
+            async
+            defer
+            type="text/javascript"
+            src="./src/zxcvbn.js"
+        ></script>
+        <script src="./src/script.js"></script>
+    </head>
+    <body>
+        <section x-data="componentData">
+            <form @submit.prevent="checkPass()">
+                <header>
+                    <h1>Password Strength Checker</h1>
+                    <h2>
+                        Type in any login information below to see how strong
+                        the password is against bruteforce attacks
+                    </h2>
+                </header>
+                <template x-for="field in inputFields">
+                    <article>
+                        <label :for="field" x-text="field"></label>
+                        <input
+                            type="text"
+                            :id="field"
+                            :name="field"
+                            :placeholder="field"
+                            :aria-placeholder="field"
+                        />
+                    </article>
+                </template>
+                <button type="submit">Check</button>
+                <h3>Time to crack: <span x-text="crackTime"></span></h3>
+            </form>
+        </section>
+    </body>
 </html>
